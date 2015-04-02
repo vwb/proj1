@@ -24,9 +24,9 @@ class PokemonsController < ApplicationController
 		end
 
 		if destroyed
-			redirect_to trainer_path(current_trainer)
+			redirect_to :back
 		elsif @pokemon.save
-			redirect_to trainer_path(current_trainer)
+			redirect_to :back
 		else
 			redirect_to :back
 		end
