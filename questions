@@ -1,0 +1,23 @@
+Q0: Why is this error being thrown:
+
+Because there is not yet any Pokemon model
+
+Q1: How are the random pokemon appearing? What is the common factor between all the possible pokemon that appear
+
+	The pokemon are appearing after calling rake db:seed which runs the seed file and thereby creating a number of pokemon and trainers. The file then grabs a pokemon name in a for loop and for each name creates a pokemon with that name and a random level. It then creates a 4  trainers as well. 
+
+Q2: What does the following line in the help text do? Be specific about what "capture_path(id: @pokemon)" is doing. If youre having trouble look at the help seciton in the README
+
+	The line creates a button in the view that enacts a post request along the route found on "capture_path" and insists that the params of the current pokemon ID be passed along with it as well. 
+
+Q3: What would you name your own Pokemon?
+
+	Chimigon
+
+Q4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
+
+	I passed in "redirect_to trainer_path(current_trainer)". This call calls the path for a specific trainer, and then the current_trainer is used as the "id" for the path input.
+
+Q5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form. 
+
+	It passes the flash as a parameter to the form, and is then triggered if the validation for the model is violated. The flash causes them to appear on the page itself, the full_messages.to_sentence parameter dictates that the full error message should appear to let the user what they are doing wrong. Sometimes it is better to just say error, but in this case not. 
